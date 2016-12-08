@@ -12,6 +12,7 @@ function [centroids C] = kmeans(X, centroids, MAX_ITER)
 
 		fprintf('Iteration %d/%d\n', iter+1, MAX_ITER);
 		if exist('OCTAVE_VERSION')
+<<<<<<< HEAD
         	fflush(stdout);
     	
     	endif
@@ -31,3 +32,11 @@ function [centroids C] = kmeans(X, centroids, MAX_ITER)
         	fflush(stdout);
 	endif
 end
+=======
+        		fflush(stdout);
+    		endif
+		C = findClosestCentroids(X, centroids);
+		centroids = updateCentroids(X, C, K);
+	endfor
+end
+>>>>>>> de89bcb84d0d8790794a2e560d91739bdcb4dc1d
